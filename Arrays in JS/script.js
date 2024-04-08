@@ -1,6 +1,6 @@
 // JS specific array loops
 // For of Loop
-const fruits=["apple","banana","strawberry","pineapple",];
+// const fruits=["apple","banana","strawberry","pineapple",];
 // console.log(fruits);
 // const upperFruits=[];
 // for(let item of fruits){
@@ -44,7 +44,41 @@ const fruits=["apple","banana","strawberry","pineapple",];
 // console.log(total);
 
 // Every
-const result= fruits.every((item)=>{
-  return item.includes("a");
-});
-console.log(result);
+// const result= fruits.every((item)=>{
+//   return item.includes("a");
+// });
+// console.log(result);
+
+// const Arg = new Array(50).fill( "💕");
+// console.log(Arg);
+
+// Challenge -01
+// 1. create array of 50 random numbers.
+const arg=[]
+for(let i=0; i<50; i++){
+  const num = Math.ceil (Math.random()*100);
+  arg.push(num);
+}
+
+arg.sort((a,b) =>{
+  return (b-a);
+})
+console.log(arg);
+const ttl=arg.reduce((acc, num)=>{
+  return acc+num }, 0);
+console.log(ttl);
+
+const evenArg=arg.filter((item)=>item % 2===0);
+const oddArg=arg.filter((item )=>item%2===1);
+console.log(evenArg);
+console.log(oddArg);
+
+
+
+// const uniqueArg = [...new Set(arg)];
+for(let i=0; i<arg.length; i++){
+  if (!uniqueArg.includes(arg[i])){
+uniqueArg.push(arg[i]);
+  }
+}
+console.log(uniqueArg);
